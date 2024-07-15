@@ -1,0 +1,99 @@
+{
+	"name": "pure-gpt",
+	"publisher": "ninglo",
+	"displayName": "Pure GPT",
+	"description": "Provide pure GPT bots in Chat View, without copilot's prompt!",
+	"icon": "./logo.jpg",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/ninglo/pure-gpt"
+	},
+	"version": "0.1.0",
+	"engines": {
+		"vscode": "^1.90.0"
+	},
+	"categories": [
+		"AI",
+		"Chat",
+		"Other"
+	],
+	"activationEvents": [],
+	"contributes": {
+		"chatParticipants": [
+			{
+				"id": "pure-gpt.gpt",
+				"name": "pure_gpt",
+				"fullName": "Pure GPT",
+				"description": "Ask gpt directly or type / for prompts",
+				"isSticky": true,
+				"commands": [
+					{
+						"name": "prompt1",
+						"when": "pure-gpt.gpt.prompt1",
+						"description": "Chat with pure gpt, the prompt is configured by the prompt1 settings."
+					},
+					{
+						"name": "prompt2",
+						"when": "pure-gpt.gpt.prompt2",
+						"description": "Chat with pure gpt, the prompt is configured by the prompt2 settings."
+					},
+					{
+						"name": "prompt3",
+						"when": "pure-gpt.gpt.prompt3",
+						"description": "Chat with pure gpt, the prompt is configured by the prompt3 settings."
+					},
+					{
+						"name": "prompt4",
+						"when": "pure-gpt.gpt.prompt4",
+						"description": "Chat with pure gpt, the prompt is configured by the prompt4 settings."
+					},
+					{
+						"name": "prompt5",
+						"when": "pure-gpt.gpt.prompt5",
+						"description": "Chat with pure gpt, the prompt is configured by the prompt5 settings."
+					}
+				]
+			}
+		],
+		"configuration": {
+			"title": "Pure GPT's Configuration",
+			"properties": {
+				"pure-gpt.gpt.type": {
+					"description": "The type of GPT model to use.",
+					"default": "gpt-3.5-turbo",
+					"enum": [
+						"gpt-3.5-turbo",
+						"gpt-4",
+						"gpt-4-turbo"
+					]
+				},
+				"pure-gpt.gpt.max-history-length": {
+					"description": "The maximum length of history messages to use for GPT. (But also limited by the max tokens of the model)",
+					"type": "number",
+					"default": 3
+				},
+				"pure-gpt.gpt.prompts": {
+					"description": "The prompts to use for GPT. (The max length of this list is 5)",
+					"type": "array",
+					"default": []
+				}
+			}
+		}
+	},
+	"main": "./out/extension.js",
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"lint": "eslint \"src/**/*.ts\"",
+		"watch": "tsc -watch -p ./"
+	},
+	"devDependencies": {
+		"@types/node": "^20.5.9",
+		"@vscode/prompt-tsx": "^0.2.3-alpha",
+		"@types/vscode": "1.90.0",
+		"@typescript-eslint/eslint-plugin": "^7.14.0",
+		"@typescript-eslint/parser": "^7.14.0",
+		"eslint": "^8.26.0",
+		"typescript": "^5.5.2"
+	}
+}
