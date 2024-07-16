@@ -24,8 +24,12 @@ Coincidentally, VSCode recently launched APIs related to dialogues and models. W
 
 Feedback and suggestions are welcome!
 
+
 Project URL: https://github.com/Ninglo/pure-gpt
+
 Extension Download URL: https://marketplace.visualstudio.com/items?itemName=ninglo.pure-gpt
+
+## Notes
 
 Note 1:
 Considering the diverse scenarios for using bare GPT in communication, the extension provides the ability to customize Prompts. Add Prompts in the settings (modify the `pure-gpt.gpt.prompts` list value in the VSCode User Settings JSON) and type / in the Chat input box to select the corresponding command. The extension will insert the Prompt into the context when calling the model.
